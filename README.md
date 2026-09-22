@@ -69,7 +69,7 @@ Designed to display well across screen sizes, from mobile (375px and up) to tabl
 
 ## 🌐 Live Demo
 
-Deployed on Netlify: [your-site-name.netlify.app](https://your-site-name.netlify.app)
+Deployed on Netlify: [andra-webdev.netlify.app](https://andra-webdev.netlify.app)
 
 ## 📬 Contact
 
