@@ -1,6 +1,6 @@
-# 🎨 Portofolio Narendra Adinata Anggara
+# 🎨 Narendra Adinata Anggara — Portfolio
 
-Website portofolio pribadi dengan gaya **neo-brutalist** yang hangat dan playful — dibangun menggunakan HTML, CSS, dan JavaScript murni (vanilla), tanpa framework.
+A personal portfolio website with a warm, playful **neo-brutalist** design — built with vanilla HTML, CSS, and JavaScript, no frameworks.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
@@ -8,66 +8,70 @@ Website portofolio pribadi dengan gaya **neo-brutalist** yang hangat dan playful
 
 ---
 
-## 📋 Tentang Proyek
+## 📋 About the Project
 
-Situs ini adalah portofolio pribadi yang menampilkan profil, proyek, dan informasi kontak dengan pendekatan desain **neo-brutalist**: border tebal, shadow solid, warna-warna hangat dan vibrant, serta interaksi yang playful namun tetap rapi dan fungsional.
+This is a personal portfolio site showcasing a profile, projects, and contact information using a **neo-brutalist** design approach: bold borders, solid drop shadows, warm and vibrant colors, and playful yet clean, functional interactions.
 
-## ✨ Fitur
+## ✨ Features
 
-- **Desain neo-brutalist** dengan border tebal, drop shadow solid, dan palet warna hangat (oranye, kuning, pink, ungu)
-- **Hero section** dua kolom dengan foto profil, badge status, dan tombol CTA (Call to Action)
-- **Navigasi aktif otomatis** — menu akan ter-highlight sesuai section yang sedang dilihat saat scroll
-- **Hamburger menu** responsif untuk tampilan mobile
-- **Animasi reveal on scroll** — elemen muncul dengan efek fade + slide saat pertama kali terlihat
-- **Salin email dengan satu klik** pada bagian kontak
-- **Sepenuhnya responsif**, teruji dari layar mobile hingga desktop
-- **Tahun footer otomatis** — tidak perlu update manual tiap tahun
+- **Neo-brutalist design** with thick borders, solid drop shadows, and a warm color palette (orange, yellow, pink, purple)
+- **Two-column hero section** featuring a profile photo, status badge, and call-to-action buttons
+- **Automatic active navigation** — the menu highlights the section currently in view while scrolling
+- **Responsive hamburger menu** for mobile screens
+- **Scroll-reveal animations** — elements fade and slide in the first time they enter the viewport
+- **One-click email copy** in the contact section
+- **Fully responsive**, tested from mobile to desktop screens
+- **Auto-updating footer year** — no manual updates required
 
 ## 🛠️ Tech Stack
 
-| Teknologi | Kegunaan |
+| Technology | Purpose |
 |---|---|
-| HTML5 | Struktur & markup |
-| CSS3 | Styling, layout (Flexbox & Grid), animasi |
-| JavaScript (Vanilla) | Interaktivitas, Intersection Observer API, Clipboard API |
-| Google Fonts | *Outfit* (heading) & *Plus Jakarta Sans* (body) |
+| HTML5 | Structure & markup |
+| CSS3 | Styling, layout (Flexbox & Grid), animations |
+| JavaScript (Vanilla) | Interactivity, Intersection Observer API, Clipboard API |
+| Google Fonts | *Outfit* (headings) & *Plus Jakarta Sans* (body) |
 
-## 📁 Struktur Folder
+## 📁 Folder Structure
 
 ```
-├── index.html      # Struktur utama halaman
-├── style.css       # Seluruh styling & desain neo-brutalist
-├── script.js       # Logika interaktif (nav aktif, animasi, dll)
-└── README.md       # Dokumentasi proyek
+├── index.html      # Main page structure
+├── style.css       # All styling & neo-brutalist design
+├── script.js       # Interactive logic (active nav, animations, etc.)
+└── README.md       # Project documentation
 ```
 
-## 🧩 Bagian Halaman
+## 🧩 Page Sections
 
-1. **Navigasi** — logo & menu (Tentang, Proyek, Kontak) dengan highlight otomatis
-2. **Hero** — perkenalan singkat, peran, foto profil, dan tombol aksi
-3. **Tentang Saya** — deskripsi singkat latar belakang dan minat profesional
-4. **Proyek Saya** — grid kartu berisi kategori/contoh proyek (UI/UX, Web Development, Mobile App)
-5. **Hubungi Saya** — kartu kontak (Email, LinkedIn, GitHub) dengan fitur salin cepat
+1. **Navigation** — logo & menu (About, Projects, Contact) with automatic highlighting
+2. **Hero** — brief introduction, role, profile photo, and call-to-action buttons
+3. **About Me** — a short description of background and professional interests
+4. **Projects** — a card grid showcasing project categories/examples (UI/UX, Web Development, Mobile App)
+5. **Contact** — contact cards (Email, LinkedIn, GitHub) with a quick-copy feature
 
-## 🚀 Cara Menjalankan Secara Lokal
+## 🚀 Running Locally
 
-1. Clone repository ini
+1. Clone this repository
    ```bash
-   git clone https://github.com/andra16bt/nama-repo.git
+   git clone https://github.com/andra16bt/repo-name.git
    ```
-2. Masuk ke folder proyek
+2. Move into the project folder
    ```bash
-   cd nama-repo
+   cd repo-name
    ```
-3. Buka `index.html` langsung di browser, atau gunakan Live Server (ekstensi VS Code) untuk pengalaman development yang lebih baik.
+3. Open `index.html` directly in your browser, or use a Live Server (VS Code extension) for a smoother development experience.
 
-Tidak ada proses instalasi dependency — proyek ini murni HTML, CSS, dan JavaScript tanpa build tools.
+No installation or build tools are required — this project is pure HTML, CSS, and JavaScript.
 
-## 📱 Kompatibilitas
+## 📱 Compatibility
 
-Telah disesuaikan agar tampil baik di berbagai ukuran layar, mulai dari mobile (375px ke atas), tablet, hingga desktop.
+Designed to display well across screen sizes, from mobile (375px and up) to tablet and desktop.
 
-## 📬 Kontak
+## 🌐 Live Demo
+
+Deployed on Netlify: [your-site-name.netlify.app](https://your-site-name.netlify.app)
+
+## 📬 Contact
 
 - **Email:** rendradinata1606@gmail.com
 - **LinkedIn:** [linkedin.com/in/rendradinata](https://linkedin.com/in/rendradinata)
@@ -75,4 +79,4 @@ Telah disesuaikan agar tampil baik di berbagai ukuran layar, mulai dari mobile (
 
 ---
 
-<p align="center">Dibuat dengan ❤️ oleh Narendra Adinata Anggara</p>
+<p align="center">Built with ❤️ by Narendra Adinata Anggara</p>
