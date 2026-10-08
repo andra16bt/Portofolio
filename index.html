@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Andra — Design, Code &amp; Data</title>
+    <meta
+      name="description"
+      content="Portfolio of Andra, an Information Systems student working across graphic design, development, and data analytics."
+    />
+    <meta property="og:title" content="Andra — Design, Code & Data" />
+    <meta
+      property="og:description"
+      content="Graphic design, web development, and data analytics projects by an Information Systems student."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/background.css" />
+    <link rel="stylesheet" href="css/intro.css" />
+    <script
+      src="js/intro.js"
+      data-name="Andra"
+      data-tagline="Design · Development · Data"
+    ></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-header"></div>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+          <div class="hero__stagger">
+            <div class="hero__eyebrow">
+              <span class="sticker sticker--yellow">OPEN TO WORK</span>
+              <span class="sticker sticker--mint">NEW 2026</span>
+            </div>
+            <h1 id="hero-title">
+              Design, <span class="highlight">Code</span> &amp; Data
+            </h1>
+            <p class="hero__desc">
+              I'm an Information Systems student who enjoys turning ideas into
+              visuals, websites, and insights from data.
+            </p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="projects.html">View Projects</a>
+              <a class="btn btn--accent" href="#contact">Contact Me</a>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <span class="sticker">★ FEATURED</span>
+            <div class="frame">
+              <img
+                src="assets/images/profile/profile.jpeg"
+                alt="Portrait of Andra"
+                onerror="
+                  this.outerHTML =
+                    '<div class=&quot;frame__placeholder&quot;>Your<br>photo<br>here</div>'
+                "
+              />
+            </div>
+            <span class="sticker sticker--purple">DESIGN × CODE × DATA</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Marquee -->
+      <div class="marquee" aria-label="Services">
+        <div class="marquee__track" aria-hidden="true">
+          <span class="marquee__item">Graphic Design ✦</span
+          ><span class="marquee__item">Development ✦</span
+          ><span class="marquee__item">Data Analytics ✦</span
+          ><span class="marquee__item">Open for Collab ✦</span>
+          <span class="marquee__item">Graphic Design ✦</span
+          ><span class="marquee__item">Development ✦</span
+          ><span class="marquee__item">Data Analytics ✦</span
+          ><span class="marquee__item">Open for Collab ✦</span>
+          <span class="marquee__item">Graphic Design ✦</span
+          ><span class="marquee__item">Development ✦</span
+          ><span class="marquee__item">Data Analytics ✦</span
+          ><span class="marquee__item">Open for Collab ✦</span>
+          <span class="marquee__item">Graphic Design ✦</span
+          ><span class="marquee__item">Development ✦</span
+          ><span class="marquee__item">Data Analytics ✦</span
+          ><span class="marquee__item">Open for Collab ✦</span>
+        </div>
+        <p class="sr-only">
+          Graphic design, development, data analytics, open for collaboration.
+        </p>
+      </div>
+
+      <!-- About -->
+      <section
+        class="section section--cream"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="container about__grid">
+          <div class="about__text reveal">
+            <span class="script-label">hello, nice to meet you</span>
+            <h2 id="about-title" style="margin-bottom: 1.5rem">
+              About <span class="highlight">Me</span>
+            </h2>
+            <p>
+              I'm a 3rd-semester Information Systems student at State University
+              of Surabaya. I enjoy building things that look good, work well,
+              and make sense of data.
+            </p>
+            <p>
+              I started in graphic design as part of a school committee's design
+              team, moved into web development, and I'm now learning data
+              analytics. I'm still a beginner in data, but I'm learning a little
+              more every week.
+            </p>
+            <div class="stats">
+              <div class="stat"><strong>3</strong><span>Fields</span></div>
+              <div class="stat"><strong>5+</strong><span>Projects</span></div>
+              <div class="stat"><strong>7</strong><span>Tools</span></div>
+            </div>
+          </div>
+          <div class="about__photo reveal">
+            <div class="frame">
+              <img
+                src="assets/images/profile/about.jpeg"
+                alt="andra at work"
+                loading="lazy"
+                onerror="
+                  this.outerHTML =
+                    '<div class=&quot;frame__placeholder&quot; style=&quot;background:var(--mint)&quot;>Another<br>photo</div>'
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills (3 bidang) -->
+      <section
+        class="section section--yellow"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="script-label">what I do</span>
+            <h2 id="skills-title">
+              My <span class="highlight highlight--white">Skills</span>
+            </h2>
+          </div>
+          <div class="skill-groups">
+            <article class="card skill-group skill-group--design reveal">
+              <div class="skill-group__head"><h3>Graphic Design</h3></div>
+              <p>Where I started: visuals for a school committee.</p>
+              <ul class="chips">
+                <li class="chip">Social Media Design</li>
+                <li class="chip">Poster Design</li>
+                <li class="chip">Typography</li>
+                <li class="chip">Layout &amp; Composition</li>
+                <li class="chip">Color Theory</li>
+              </ul>
+            </article>
+            <article class="card skill-group skill-group--development reveal">
+              <div class="skill-group__head"><h3>Development</h3></div>
+              <p>Building websites and small apps from scratch.</p>
+              <ul class="chips">
+                <li class="chip">HTML &amp; CSS</li>
+                <li class="chip">JavaScript</li>
+                <li class="chip">Responsive Design</li>
+                <li class="chip">Basic UI Design</li>
+                <li class="chip">Basic Database</li>
+              </ul>
+            </article>
+            <article class="card skill-group skill-group--data reveal">
+              <div class="skill-group__head">
+                <h3>Data Analytics</h3>
+                <span class="tag">Still Learning</span>
+              </div>
+              <p>Just getting started, one dataset at a time.</p>
+              <ul class="chips">
+                <li class="chip">Data Cleaning</li>
+                <li class="chip">Basic SQL</li>
+                <li class="chip">Data Visualization</li>
+                <li class="chip">System Analysis</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Software & Tools -->
+      <!-- GANTI nama file logo (src) dan nama tool sesuai punyamu -->
+      <section
+        class="section section--purple"
+        id="tools"
+        aria-labelledby="tools-title"
+      >
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="script-label">what I use</span>
+            <h2 id="tools-title">
+              Software &amp;
+              <span class="highlight highlight--white">Tools</span>
+            </h2>
+          </div>
+          <ul class="tiles reveal">
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/adobe-photoshop-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Photoshop
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/adobe-illustrator-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Illustrator
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/adobe-lightroom-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Lightroom
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/adobe-premiere-pro-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Premiere Pro
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/canva-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Canva
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/capcut-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Capcut
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/figma-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Figma
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/visual-studio-code-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >VS Code
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/github.png"
+                  alt=""
+                  loading="lazy" /></span
+              >GitHub
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/google_bigquery_logo_icon_168150.webp"
+                  alt=""
+                  loading="lazy" /></span
+              >Google BigQuery
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/excel-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Excel
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Programming Languages -->
+      <section
+        class="section section--mint"
+        id="languages"
+        aria-labelledby="lang-title"
+      >
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="script-label">the code side</span>
+            <h2 id="lang-title">
+              Programming
+              <span class="highlight highlight--white">Languages</span>
+            </h2>
+          </div>
+          <ul class="tiles reveal">
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/css-3.png"
+                  alt=""
+                  loading="lazy" /></span
+              >CSS
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/html-5.png"
+                  alt=""
+                  loading="lazy" /></span
+              >HTML
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/js.png"
+                  alt=""
+                  loading="lazy" /></span
+              >JavaScript
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/python-programming-language-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Python
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/c-.png"
+                  alt=""
+                  loading="lazy" /></span
+              >C#
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/postgresql-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >PostgreSQL
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/mysql-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >MySQL
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/java-programming-language-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >Java
+            </li>
+            <li class="tile">
+              <span class="tile__icon"
+                ><img
+                  src="assets/images/tile-logo/php-programming-language-icon.png"
+                  alt=""
+                  loading="lazy" /></span
+              >PHP
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section
+        class="section section--cream"
+        id="featured"
+        aria-labelledby="featured-title"
+      >
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="script-label">selected work</span>
+            <h2 id="featured-title">
+              Featured <span class="highlight">Projects</span>
+            </h2>
+          </div>
+          <div class="project-grid" id="featured-grid"></div>
+          <div class="section__cta reveal">
+            <a class="btn btn--primary" href="projects.html"
+              >See All Projects →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section
+        class="section section--orange"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container contact__grid">
+          <div class="card contact__form reveal">
+            <h2 id="contact-title" style="margin-bottom: 1.5rem">
+              Let's <span class="highlight highlight--mint">Talk</span>
+            </h2>
+            <form class="form" id="contact-form" novalidate>
+              <div class="field">
+                <label for="name">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                />
+                <div class="field__error" role="alert"></div>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+                <div class="field__error" role="alert"></div>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <div class="field__error" role="alert"></div>
+              </div>
+              <button class="btn btn--primary" type="submit">
+                Send Message →
+              </button>
+              <div
+                class="form__status"
+                id="form-status"
+                role="status"
+                aria-live="polite"
+              ></div>
+            </form>
+          </div>
+          <div class="contact__side reveal">
+            <span class="script-label">say hi</span>
+            <p>
+              Have a project, an idea, or a team that needs a designer, a
+              developer, or someone learning data? Drop me a message.
+            </p>
+            <p>
+              <a href="rendradinata1606@gmail.com"
+                ><strong>rendradinata1606@gmail.com</strong></a
+              >
+            </p>
+            <div class="social-links">
+              <a
+                class="btn btn--small"
+                href="https://www.instagram.com/ndradnata_/"
+                target="_blank"
+                rel="noopener"
+                >Instagram</a
+              >
+              <a
+                class="btn btn--small"
+                href="www.linkedin.com/in/rendradinata"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+              <a
+                class="btn btn--small"
+                href="https://github.com/andra16bt"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+            <div>
+              <a
+                class="btn btn--accent"
+                href="assets/cv/CV-NamaKamu.pdf"
+                download
+                >Download CV ↓</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/projects-page.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/background.js"></script>
+  </body>
+</html>

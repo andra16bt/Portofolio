@@ -1,0 +1,322 @@
+/* intro.css — layar intro (gerbang masuk) bergaya neo-brutalism.
+   Mandiri: tidak butuh variables.css. Dipakai bersama intro.js. */
+
+/* Kunci scroll selama intro aktif */
+html.intro-active,
+html.intro-active body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+/* Tahan animasi hero di belakang intro; mulai saat tirai mulai terbuka */
+html.intro-active:not(.intro-reveal) .hero__stagger > * {
+  animation-play-state: paused !important;
+}
+
+.intro {
+  --i-black: #111111;
+  --i-cream: #fff4dc;
+  --i-pink: #ff5fa8;
+  --i-yellow: #ffd93d;
+  --i-purple: #b9a2ff;
+  --i-mint: #62e6b0;
+  --i-orange: #ff8a3d;
+  --i-display: "Archivo Black", Impact, sans-serif;
+  --i-body: "Space Grotesk", system-ui, sans-serif;
+  --i-script: "Caveat", cursive;
+  --i-ease: cubic-bezier(0.7, 0, 0.2, 1);
+
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  touch-action: none;
+  overscroll-behavior: none;
+  font-family: var(--i-body);
+  color: var(--i-black);
+  -webkit-user-select: none;
+  user-select: none;
+}
+.intro.is-leaving {
+  pointer-events: none;
+}
+
+/* Lembaran: panel warna di belakang + stage utama di depan.
+   Saat keluar, semuanya naik berurutan seperti tirai berlapis. */
+.intro__panel,
+.intro__stage {
+  position: absolute;
+  inset: 0;
+  background: var(--c, var(--i-pink));
+  border-bottom: 4px solid var(--i-black);
+  transition: transform 0.8s var(--i-ease) calc(var(--d, 0) * 90ms);
+  will-change: transform;
+}
+.intro.is-leaving .intro__panel,
+.intro.is-leaving .intro__stage {
+  transform: translateY(-101%);
+}
+
+/* ---------- Stage ---------- */
+.intro__stage {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Grid tipis bergerak (senada dengan background.css) */
+.intro__stage::before {
+  content: "";
+  position: absolute;
+  inset: -96px;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M0 .75H48M.75 0V48' fill='none' stroke='%23111111' stroke-opacity='0.14' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 48px 48px;
+  animation: introGrid 10s linear infinite;
+}
+@keyframes introGrid {
+  to {
+    transform: translate3d(48px, 48px, 0);
+  }
+}
+
+/* Stiker */
+.intro__sticker {
+  position: absolute;
+  z-index: 2;
+  top: 1.25rem;
+  font: 700 0.875rem var(--i-body);
+  padding: 0.35rem 0.9rem;
+  background: var(--i-yellow);
+  border: 3px solid var(--i-black);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--i-black);
+}
+.intro__sticker--a {
+  left: 1.25rem;
+  rotate: -5deg;
+}
+.intro__sticker--b {
+  right: 1.25rem;
+  rotate: 4deg;
+  background: var(--i-mint);
+}
+
+/* Bentuk melayang */
+.intro__shape {
+  position: absolute;
+  width: calc(var(--s) * 1px);
+  pointer-events: none;
+  animation: introFloat var(--dur, 7s) ease-in-out var(--delay, 0s) infinite;
+}
+.intro__shape--spin {
+  animation-name: introSpin;
+  animation-timing-function: linear;
+}
+.intro__shape svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+@keyframes introFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(5deg);
+  }
+}
+@keyframes introSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tengah */
+.intro__center {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.9rem;
+  padding: 4.5rem 1.25rem 1rem;
+  text-align: center;
+}
+.intro__script {
+  margin: 0;
+  font: 700 clamp(1.4rem, 3.5vw, 2rem) / 1 var(--i-script);
+}
+.intro__title {
+  display: grid;
+  justify-items: center;
+  gap: 0.12em;
+  margin: 0;
+  font-family: var(--i-display);
+  font-size: clamp(2.75rem, 11vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.intro__name {
+  display: inline-block;
+  padding: 0 0.2em;
+  background: var(--i-yellow);
+  border: 4px solid var(--i-black);
+  box-shadow: 8px 8px 0 var(--i-black);
+  rotate: -2deg;
+}
+.intro__tag {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+}
+
+/* Animasi muncul bertahap */
+.intro__pop {
+  opacity: 0;
+  animation: introPop 0.65s cubic-bezier(0.2, 0.8, 0.2, 1.25) forwards;
+  animation-delay: calc(var(--p, 0) * 130ms + 150ms);
+}
+@keyframes introPop {
+  from {
+    opacity: 0;
+    transform: translateY(44px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Tombol masuk */
+.intro__bottom {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  padding: 0 1rem 1.5rem;
+}
+.intro__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 44px;
+  padding: 0.55rem 1.5rem 0.55rem 0.55rem;
+  font: 700 clamp(1rem, 2.4vw, 1.25rem) var(--i-body);
+  color: var(--i-black);
+  background: var(--i-yellow);
+  border: 4px solid var(--i-black);
+  border-radius: 999px;
+  box-shadow: 5px 5px 0 var(--i-black);
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+.intro__cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--i-black);
+}
+.intro__cta:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--i-black);
+}
+.intro__cta:focus-visible {
+  outline: 3px solid var(--i-black);
+  outline-offset: 4px;
+}
+.intro__key {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  font: 400 1.5rem var(--i-display);
+  color: var(--i-cream);
+  background: var(--i-black);
+  border-radius: 12px;
+  animation: introBounce 1.2s ease-in-out infinite;
+}
+@keyframes introBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+.intro__hint {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* Marquee bawah */
+.intro__marquee {
+  overflow: hidden;
+  background: var(--i-black);
+  border-top: 4px solid var(--i-black);
+}
+.intro__track {
+  display: flex;
+  width: max-content;
+  animation: introMarquee 30s linear infinite;
+}
+.intro__track span {
+  padding: 0.8rem 1.25rem;
+  font: 400 1.05rem var(--i-display);
+  color: var(--i-cream);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.intro__track span:nth-child(even) {
+  color: var(--i-yellow);
+}
+@keyframes introMarquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 639px) {
+  .intro__shape {
+    width: calc(var(--s) * 0.65px);
+  }
+  .intro__name {
+    border-width: 3px;
+    box-shadow: 5px 5px 0 var(--i-black);
+  }
+  .intro__sticker--b {
+    display: none;
+  }
+}
+
+/* Reduced motion: tanpa animasi, intro tetap berfungsi sebagai gerbang */
+@media (prefers-reduced-motion: reduce) {
+  .intro *,
+  .intro *::before {
+    animation: none !important;
+    transition: none !important;
+  }
+  .intro__pop {
+    opacity: 1;
+  }
+}
+
+.intro__sticker.intro__pop {
+  animation:
+    introPop 0.65s cubic-bezier(0.2, 0.8, 0.2, 1.25) forwards,
+    introStickerFloat 4.5s ease-in-out infinite;
+  animation-delay:
+    calc(var(--p, 0) * 130ms + 150ms), calc(var(--p, 0) * 130ms + 800ms); /* mulai melayang setelah selesai muncul */
+}
+@keyframes introStickerFloat {
+  50% {
+    translate: 0 -8px;
+  }
+}

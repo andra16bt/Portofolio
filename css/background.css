@@ -1,0 +1,74 @@
+/* background.css — latar animasi universal (grid tipis bergerak + bentuk melayang)
+   Cukup di-link di halaman mana pun. Otomatis aktif di elemen: .hero, .section, .page-head, atau [data-bg].
+   Matikan di elemen tertentu dengan data-bg="off".
+   Catatan: grid memakai opacity rendah (pengecualian dari aturan "tanpa transparansi" di design.md). */
+
+/* Elemen target jadi "kanvas" sendiri supaya lapisan latar berada di bawah konten */
+:is(.hero, .section, .page-head, [data-bg]):not([data-bg="off"]) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* 1) Grid tipis yang bergeser pelan
+   Kotak 48px, garis 1.5px, opacity 0.14.
+   Ubah: angka 48 (width/height/background-size/keyframes harus sama),
+   stroke-width='1.5' (ketebalan), stroke-opacity='0.14' (kepekatan). */
+:is(.hero, .section, .page-head, [data-bg]):not([data-bg="off"])::before {
+  content: "";
+  position: absolute;
+  inset: -96px;               /* lebih besar dari elemen agar tidak ada tepi kosong saat bergeser */
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M0 .75H48M.75 0V48' fill='none' stroke='%23111111' stroke-opacity='0.14' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 48px 48px;
+  animation: bgGrid 10s linear infinite;
+}
+/* Arah berselang-seling antar elemen (class .bg-alt ditambahkan otomatis oleh background.js) */
+.bg-alt::before { animation-direction: reverse !important; }
+
+/* Geser tepat satu ukuran kotak (48px) agar loop mulus */
+@keyframes bgGrid {
+  to { transform: translate3d(48px, 48px, 0); }
+}
+
+/* 2) Bentuk dekoratif melayang (disisipkan oleh background.js) */
+.bg-shapes {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.bg-shape {
+  position: absolute;
+  width: calc(var(--s) * 1px);
+  will-change: transform;
+}
+.bg-shape svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.bg-shape--float svg { animation: bgFloat var(--dur, 7s) ease-in-out var(--delay, 0s) infinite; }
+.bg-shape--spin svg  { animation: bgSpin var(--dur, 26s) linear var(--delay, 0s) infinite; }
+
+@keyframes bgFloat {
+  0%, 100% { transform: translateY(0) rotate(calc(var(--rot, 5deg) * -1)); }
+  50%      { transform: translateY(-16px) rotate(var(--rot, 5deg)); }
+}
+@keyframes bgSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile: bentuk lebih kecil, dan yang ditandai data-m="0" disembunyikan */
+@media (max-width: 767px) {
+  .bg-shape { width: calc(var(--s) * 0.7px); }
+  .bg-shape[data-m="0"] { display: none; }
+}
+
+/* Reduced motion: semua animasi dimatikan, grid tetap tampil statis */
+@media (prefers-reduced-motion: reduce) {
+  :is(.hero, .section, .page-head, [data-bg])::before,
+  .bg-shape svg { animation: none !important; }
+}

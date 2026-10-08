@@ -1,0 +1,659 @@
+/* components.css */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  font: 700 1rem var(--font-body);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  background: var(--white);
+  color: var(--black);
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--black);
+}
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--black);
+}
+.btn--primary {
+  background: var(--black);
+  color: var(--white);
+}
+.btn--accent {
+  background: var(--yellow);
+  color: var(--black);
+}
+.btn--ghost {
+  background: var(--white);
+  color: var(--black);
+}
+.btn--small {
+  padding: 0.5rem 1rem;
+  font-size: var(--fs-small);
+}
+
+/* Card */
+.card {
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--dur-base) var(--ease),
+    box-shadow var(--dur-base) var(--ease);
+}
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Highlight */
+.highlight {
+  background: var(--yellow);
+  border: var(--border);
+  padding: 0 0.25em;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  box-shadow: var(--shadow-sm);
+}
+.highlight--white {
+  background: var(--white);
+}
+.highlight--mint {
+  background: var(--mint);
+}
+
+/* Sticker */
+.sticker {
+  display: inline-block;
+  font: 700 0.875rem var(--font-body);
+  padding: 0.35rem 0.9rem;
+  background: var(--pink);
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  transform: rotate(-4deg);
+  transition: transform 300ms var(--ease);
+}
+.sticker--yellow {
+  background: var(--yellow);
+  transform: rotate(5deg);
+}
+.sticker--mint {
+  background: var(--mint);
+  transform: rotate(-3deg);
+}
+.sticker--purple {
+  background: var(--purple);
+  transform: rotate(4deg);
+}
+.sticker:hover {
+  animation: wiggle 300ms ease-in-out;
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: 3deg;
+  }
+  75% {
+    rotate: -3deg;
+  }
+}
+
+/* Marquee */
+.marquee {
+  overflow: hidden;
+  background: var(--black);
+  border-bottom: var(--border);
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee:hover .marquee__track,
+.marquee:focus-within .marquee__track {
+  animation-play-state: paused;
+}
+.marquee__item {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: var(--cream);
+  padding: 0.9rem 1.25rem;
+  white-space: nowrap;
+}
+.marquee__item:nth-child(even) {
+  color: var(--yellow);
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+  .marquee__track {
+    animation: none;
+  }
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cream);
+  border-bottom: var(--border);
+}
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  gap: 1rem;
+}
+.navbar__logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.navbar__logo span {
+  background: var(--pink);
+  border: var(--border);
+  padding: 0 0.3em;
+  border-radius: 8px;
+  display: inline-block;
+  transform: rotate(-3deg);
+}
+.navbar__menu {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navbar__link {
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.35rem 0.8rem;
+  border: 3px solid transparent;
+  border-radius: var(--radius-sm);
+}
+.navbar__link:hover {
+  border-color: var(--black);
+}
+.navbar__link.is-active {
+  background: var(--yellow);
+  border: var(--border);
+}
+.navbar__cta {
+  display: none;
+}
+.navbar__toggle {
+  width: 48px;
+  height: 44px;
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.navbar__toggle span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  background: var(--black);
+  transition:
+    transform var(--dur-fast) var(--ease),
+    opacity var(--dur-fast);
+}
+.navbar__toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.navbar__toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-menu {
+  display: none;
+  padding: 1rem 16px 1.5rem;
+  border-top: var(--border);
+  background: var(--cream);
+}
+.mobile-menu.is-open {
+  display: grid;
+  gap: 0.75rem;
+}
+.mobile-menu a {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.mobile-menu a.is-active {
+  background: var(--yellow);
+}
+.mobile-menu a.btn--primary {
+  background: var(--black);
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .navbar__menu {
+    display: flex;
+  }
+  .navbar__cta {
+    display: inline-flex;
+  }
+  .navbar__toggle {
+    display: none;
+  }
+  .mobile-menu,
+  .mobile-menu.is-open {
+    display: none;
+  }
+}
+
+/* Chips & tiles */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.chip {
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.5rem 1.1rem;
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  background: var(--pink);
+  transition: transform var(--dur-fast) var(--ease);
+}
+.chip:nth-child(5n + 1) {
+  background: var(--pink);
+}
+.chip:nth-child(5n + 2) {
+  background: var(--white);
+}
+.chip:nth-child(5n + 3) {
+  background: var(--purple);
+}
+.chip:nth-child(5n + 4) {
+  background: var(--mint);
+}
+.chip:nth-child(5n + 5) {
+  background: var(--orange);
+}
+.chip:hover {
+  transform: translate(-2px, -2px) rotate(-2deg);
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-gap);
+}
+@media (min-width: 480px) {
+  .tiles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .tiles {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .tiles {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+.tile {
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--fs-small);
+  transition:
+    transform var(--dur-base) var(--ease),
+    box-shadow var(--dur-base) var(--ease);
+}
+.tile:hover {
+  transform: translate(-3px, -3px) rotate(2deg);
+  box-shadow: var(--shadow-md);
+}
+.tile:nth-child(even):hover {
+  transform: translate(-3px, -3px) rotate(-2deg);
+}
+.tile__icon {
+  width: 64px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tile__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Tag */
+.tag {
+  display: inline-block;
+  font-weight: 700;
+  font-size: var(--fs-small);
+  padding: 0.15rem 0.7rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-pill);
+}
+
+/* Forms */
+.form {
+  display: grid;
+  gap: 1.25rem;
+}
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+.field label {
+  font-weight: 700;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+}
+.field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+.field input:focus,
+.field textarea:focus {
+  box-shadow: var(--shadow-sm);
+  outline: 3px solid var(--yellow);
+  outline-offset: 0;
+}
+.field__error {
+  display: none;
+  background: var(--orange);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+.field.has-error .field__error {
+  display: block;
+}
+.form__status {
+  display: none;
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+}
+.form__status.is-success {
+  display: block;
+  background: var(--mint);
+}
+.form__status.is-error {
+  display: block;
+  background: var(--orange);
+}
+.form__status.is-loading {
+  display: block;
+  background: var(--yellow);
+}
+
+/* Footer */
+.footer {
+  background: var(--black);
+  color: var(--cream);
+  padding-block: 3rem;
+}
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.footer .btn {
+  box-shadow: 3px 3px 0 var(--cream);
+  border-color: var(--cream);
+}
+.footer__copy {
+  font-size: var(--fs-small);
+  width: 100%;
+}
+
+/* ================= Tile: pop bertahap, hover stiker, efek tekan ================= */
+
+/* 1) Muncul satu per satu dengan efek memantul
+   Grupnya tidak lagi memudar sekaligus; tiap tile yang animasi. */
+.tiles.reveal {
+  opacity: 1;
+  transform: none;
+}
+.tiles.reveal:not(.is-visible) .tile {
+  opacity: 0;
+}
+.tiles.reveal.is-visible .tile {
+  animation: tilePop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms); /* jeda antar tile */
+}
+.tile:nth-child(1) {
+  --i: 0;
+}
+.tile:nth-child(2) {
+  --i: 1;
+}
+.tile:nth-child(3) {
+  --i: 2;
+}
+.tile:nth-child(4) {
+  --i: 3;
+}
+.tile:nth-child(5) {
+  --i: 4;
+}
+.tile:nth-child(6) {
+  --i: 5;
+}
+.tile:nth-child(7) {
+  --i: 6;
+}
+.tile:nth-child(8) {
+  --i: 7;
+}
+.tile:nth-child(9) {
+  --i: 8;
+}
+.tile:nth-child(10) {
+  --i: 9;
+}
+.tile:nth-child(11) {
+  --i: 10;
+}
+.tile:nth-child(12) {
+  --i: 11;
+}
+
+@keyframes tilePop {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.8) rotate(-6deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.05) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 2) Hover ala stiker (hanya perangkat dengan mouse) */
+.tile:nth-child(3n + 1) {
+  --tile-accent: var(--pink);
+}
+.tile:nth-child(3n + 2) {
+  --tile-accent: var(--yellow);
+}
+.tile:nth-child(3n + 3) {
+  --tile-accent: var(--orange);
+}
+
+.tile__icon {
+  transition: background-color 150ms ease;
+}
+.tile__icon img {
+  transition: transform 200ms var(--ease);
+}
+
+@media (hover: hover) {
+  .tile:hover {
+    transform: translate(-4px, -4px) rotate(2deg);
+    box-shadow: var(--shadow-md);
+  }
+  .tile:nth-child(even):hover {
+    transform: translate(-4px, -4px) rotate(-2deg);
+  }
+  .tile:hover .tile__icon {
+    background: var(--tile-accent);
+  }
+  .tile:hover .tile__icon img {
+    transform: scale(1.12);
+    animation: tileWiggle 0.5s ease-in-out;
+  }
+}
+@keyframes tileWiggle {
+  0%,
+  100% {
+    transform: scale(1.12) rotate(0);
+  }
+  25% {
+    transform: scale(1.12) rotate(-8deg);
+  }
+  50% {
+    transform: scale(1.12) rotate(7deg);
+  }
+  75% {
+    transform: scale(1.12) rotate(-4deg);
+  }
+}
+
+/* 3) Efek tombol fisik saat ditekan (mouse dan sentuh) */
+.tile:nth-child(n):active {
+  transform: translate(3px, 3px) rotate(0);
+  box-shadow: 0 0 0 var(--black);
+  transition-duration: 100ms;
+}
+
+/* ===== Pop-up reveal untuk semua komponen ===== */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(44px) scale(0.9);
+    rotate: var(--tilt, -5deg);
+  }
+  /* tanpa "to": otomatis berakhir di posisi/rotasi aslinya */
+}
+
+/* Arah miring berselang-seling: kiri, kanan, kiri, ... */
+.reveal { --tilt: -5deg; }
+.reveal:nth-child(even),
+.stat:nth-child(even),
+.social-links .btn:nth-child(even) { --tilt: 5deg; }
+
+/* Setiap elemen .reveal muncul dengan efek pop saat masuk layar.
+   fill-mode "backwards" (bukan forwards) supaya efek hover tetap jalan setelahnya. */
+.reveal { transform: none; }
+.reveal.is-visible {
+  animation: popIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1.25) backwards;
+}
+
+/* Stagger per baris (grid 3 kolom): kartu project, skill-group, galeri */
+.project-grid > .reveal:nth-child(3n + 2),
+.skill-groups > .reveal:nth-child(3n + 2),
+.gallery > .reveal:nth-child(3n + 2) { animation-delay: 90ms; }
+.project-grid > .reveal:nth-child(3n + 3),
+.skill-groups > .reveal:nth-child(3n + 3),
+.gallery > .reveal:nth-child(3n + 3) { animation-delay: 180ms; }
+
+/* Angka statistik di About muncul menyusul satu per satu */
+.about__text.is-visible .stat {
+  animation: popIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1.25) backwards;
+}
+.about__text.is-visible .stat:nth-child(1) { animation-delay: 300ms; }
+.about__text.is-visible .stat:nth-child(2) { animation-delay: 400ms; }
+.about__text.is-visible .stat:nth-child(3) { animation-delay: 500ms; }
+
+/* Tombol sosial & tombol di sisi kontak ikut muncul bertahap */
+.contact__side.is-visible .social-links .btn {
+  animation: popIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1.25) backwards;
+}
+.contact__side.is-visible .social-links .btn:nth-child(1) { animation-delay: 200ms; }
+.contact__side.is-visible .social-links .btn:nth-child(2) { animation-delay: 280ms; }
+.contact__side.is-visible .social-links .btn:nth-child(3) { animation-delay: 360ms; }
+.contact__side.is-visible .social-links .btn:nth-child(4) { animation-delay: 440ms; }

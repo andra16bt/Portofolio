@@ -1,0 +1,53 @@
+/* variables.css — design tokens (dari design.md) */
+:root {
+  /* Colors */
+  --black: #111111;
+  --cream: #FFF4DC;
+  --white: #FFFFFF;
+  --pink: #FF5FA8;
+  --yellow: #FFD93D;
+  --purple: #B9A2FF;
+  --mint: #62E6B0;
+  --orange: #FF8A3D;
+
+  /* Type */
+  --font-display: "Archivo Black", Impact, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-script: "Caveat", cursive;
+
+  --fs-hero: clamp(3rem, 9vw, 7rem);
+  --fs-h1: clamp(2.5rem, 6vw, 4.5rem);
+  --fs-h2: clamp(2rem, 4.5vw, 3.25rem);
+  --fs-h3: clamp(1.25rem, 2.5vw, 1.75rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-script: 1.5rem;
+
+  /* Border, radius, shadow */
+  --border: 3px solid var(--black);
+  --border-thick: 4px solid var(--black);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --shadow-sm: 3px 3px 0 var(--black);
+  --shadow-md: 6px 6px 0 var(--black);
+  --shadow-lg: 10px 10px 0 var(--black);
+
+  /* Spacing */
+  --space-section: clamp(4rem, 8vw, 7rem);
+  --space-gap: 1.5rem;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+}
+
+@media (max-width: 479px) {
+  :root {
+    --border: 2px solid var(--black);
+    --shadow-md: 4px 4px 0 var(--black);
+    --shadow-lg: 6px 6px 0 var(--black);
+  }
+}

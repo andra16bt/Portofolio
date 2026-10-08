@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects — Andra</title>
+    <meta
+      name="description"
+      content="Selected graphic design projects: posters, branding, and social media by Andra."
+    />
+    <meta property="og:title" content="Projects — Andra" />
+    <meta
+      property="og:description"
+      content="Posters, branding, and social media design."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/background.css" />
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-header"></div>
+
+    <main id="main">
+      <header class="page-head section--yellow">
+        <div class="container">
+          <span class="script-label">my work</span>
+          <h1>All <span class="highlight highlight--white">Projects</span></h1>
+          <p>
+            A collection of my work across graphic design, development, and data
+            analytics. Click any card to see the story and details.
+          </p>
+        </div>
+      </header>
+
+      <section class="section section--cream" aria-label="Project list">
+        <div class="container">
+          <div
+            class="filters"
+            role="group"
+            aria-label="Filter projects by category"
+          >
+            <button
+              class="filter-btn is-active"
+              type="button"
+              data-filter="All"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="Graphic Design"
+              aria-pressed="false"
+            >
+              Graphic Design
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="Development"
+              aria-pressed="false"
+            >
+              Development
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="Data Analytics"
+              aria-pressed="false"
+            >
+              Data Analytics
+            </button>
+          </div>
+          <div class="project-grid" id="project-grid" aria-live="polite"></div>
+          <div class="empty-state" id="empty-state">
+            No projects in this category yet. Check back soon!
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/projects-page.js"></script>
+    <script src="js/background.js"></script>
+  </body>
+</html>
