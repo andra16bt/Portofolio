@@ -14,8 +14,8 @@ const SITE = {
 };
 
 function getCurrentPage() {
-  const file = location.pathname.split("/").pop() || "index.html";
-  if (file === "projects.html" || file === "project.html") return "projects";
+  const file = (location.pathname.split("/").pop() || "index").replace(".html", "");
+  if (file === "projects" || file === "project") return "projects";
   return "home";
 }
 
