@@ -44,3 +44,26 @@
     history.replaceState(null, "", id);
   });
 })();
+
+/* Tombol "coming soon": tampilkan notifikasi, bukan menjalankan link */
+(function () {
+  let toast, timer;
+  document.addEventListener("click", function (e) {
+    const link = e.target.closest("[data-coming-soon]");
+    if (!link) return;
+    e.preventDefault();
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "toast";
+      toast.setAttribute("role", "status");
+      toast.setAttribute("aria-live", "polite");
+      document.body.appendChild(toast);
+    }
+    toast.textContent = link.dataset.comingSoon || "Coming soon!";
+    toast.classList.remove("is-visible");
+    void toast.offsetWidth;                 // restart animasi jika diklik berulang
+    toast.classList.add("is-visible");
+    clearTimeout(timer);
+    timer = setTimeout(() => toast.classList.remove("is-visible"), 2600);
+  });
+})();
