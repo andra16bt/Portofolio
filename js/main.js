@@ -41,7 +41,7 @@
     e.preventDefault();
     const y = target.getBoundingClientRect().top + window.scrollY - 64;
     window.scrollTo({ top: y, behavior: reduce ? "auto" : "smooth" });
-    history.replaceState(null, "", id);
+    history.replaceState(null, "", location.pathname + location.search);
   });
 })();
 
@@ -67,3 +67,12 @@
     timer = setTimeout(() => toast.classList.remove("is-visible"), 2600);
   });
 })();
+
+/* Bersihkan #hash dari URL setelah browser selesai menggulir ke bagian itu */
+window.addEventListener("load", function () {
+  if (location.hash) {
+    setTimeout(function () {
+      history.replaceState(null, "", location.pathname + location.search);
+    }, 300);
+  }
+});
